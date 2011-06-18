@@ -9,8 +9,10 @@
 
 import sys, os, sqlite3
 
-script_version = "0.1.0"
+script_version = "1.0"
 
+
+# print version and help information
 
 def version_text():
 	old_out = sys.stdout
@@ -62,9 +64,20 @@ else:
 
 in_file = os.path.expanduser(in_file)
 
+if not os.path.isfile(in_file):
+	print >> sys.stderr, "py-abemails: the file \"%s\" does not exist" % in_file
+	exit()
+
 if len(args):
+	try:
+		out = open(args[0], 'w')
+	except IOError, r:
+		print >> sys.stderr, "py-abemails: error opening the output file."
+		print >> sys.stderr, e
+		exit()
 	output_to_file = True
 else:
+	out = sys.stdout
 	output_to_file = False
 
 
@@ -76,20 +89,11 @@ try:
 	addresses = conn.execute("SELECT ZADDRESSNORMALIZED FROM ZABCDEMAILADDRESS")
 except sqlite3.OperationalError, e:
 	print >> sys.stderr, "py-abemails: error reading the Address Book database."
+	print >> sys.stderr, e
 	exit()
 
 
 # output the addresses
-
-if output_to_file:
-	try:
-		out = open(args[0], 'w')
-	except IOError, r:
-		print >> sys.stderr, "py-abemails: error opening the output file."
-		print >> sys.stderr, e
-		exit()
-else:
-	out = sys.stdout
 
 for a in addresses:
 	print >> out, a[0]
