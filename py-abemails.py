@@ -4,7 +4,7 @@
 # 
 # Extract all e-mail addresses from the Mac OS X address book
 #
-# (c) Benjamin Esham, 2011.  See the accompanying README for this file's
+# (c) Benjamin Esham, 2011.  See the accompanying README.md for this file's
 # license and other information.
 
 import sys, os, sqlite3
