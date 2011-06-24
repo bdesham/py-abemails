@@ -70,7 +70,7 @@ if not os.path.isfile(in_file):
 
 if len(args):
 	try:
-		out = open(args[0], 'w')
+		out = open(os.path.expanduser(args[0]), 'w')
 	except IOError, r:
 		print >> sys.stderr, "py-abemails: error opening the output file."
 		print >> sys.stderr, e
