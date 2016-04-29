@@ -22,8 +22,11 @@ This project is [hosted on GitHub](https://github.com/bdesham/py-abemails). Plea
 
 ## Version history
 
-* 1.0 (2011-06-18): Initial release.
+* 1.0.1 (2016-04-28)
+    - You can now use “~” in the output filename to refer to your home directory.
+* 1.0 (2011-06-18)
+    - Initial release.
 
 ## License
 
-Copyright © 2011 Benjamin D. Esham. This program is released under the ISC license, which you can find in the file LICENSE.md.
+Copyright © 2011, 2016 Benjamin D. Esham. This program is released under the ISC license, which you can find in the file LICENSE.md.

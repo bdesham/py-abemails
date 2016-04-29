@@ -4,12 +4,12 @@
 # 
 # Extract all e-mail addresses from the Mac OS X address book
 #
-# Copyright (c) 2011 Benjamin D. Esham. This program is released under the ISC
-# license, which you can find in the file LICENSE.md.
+# Copyright (c) 2011, 2016 Benjamin D. Esham. This program is released under the
+# ISC license, which you can find in the file LICENSE.md.
 
 import sys, os, sqlite3
 
-script_version = "1.0"
+script_version = "1.0.1"
 
 
 # print version and help information
@@ -19,7 +19,7 @@ def version_text():
 	sys.stdout = sys.stderr
 
 	print "py-abemails", script_version
-	print "(c) 2011, Benjamin Esham"
+	print "Copyright (c) 2011, 2016 Benjamin D. Esham"
 	print "https://github.com/bdesham/py-abemails"
 
 	sys.stdout = old_out
